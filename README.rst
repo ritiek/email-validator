@@ -1,6 +1,8 @@
 email-validator
 ===============
 
+|Build Status|
+
 Checks if an e-mail address exists or not.
 
 Installation
@@ -34,14 +36,19 @@ Library Usage
     >>> import evalidator
     >>> evalidator.validate('someone@email.com')
 
-Supported Services:
--------------------
+Supported Services
+------------------
 
-At the moment only Google and Yahoo! Mail work. Please open a new issue
-if you would like to validate e-mail addresses for some other e-mail
-service.
+- Google Mail
+- Yahoo! Mail
+
+Please open a new issue if you would like to validate e-mail
+addresses for some other e-mail service.
 
 License
 -------
 
 ``The MIT License``
+
+.. |Build Status| image:: https://travis-ci.org/ritiek/scribd-downloader.svg?branch=master
+   :target: https://travis-ci.org/ritiek/scribd-downloader
