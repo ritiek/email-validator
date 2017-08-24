@@ -63,17 +63,15 @@ def validate(email):
 def command_line():
     args = get_arguments()
     email = args.email
-
+    
     try:
         is_valid = validate(email)
-
         if is_valid:
             result = email + ' is a valid e-mail address'
         else:
             result = email + ' is not a valid e-mail address'
-
         print(result)
-
+        
     except EmailError:
         print('This e-mail service is not supported currently. Please submit an issue on https://github.com/ritiek/email-validator/issues and thank you!')
 
