@@ -46,7 +46,6 @@ def yahoo_mail(email):
 
     response = requests.post('https://login.yahoo.com/config/login?', headers=headers, data=data)
     text = json.loads(response.text)
-    print(text)
     is_valid = 'error' in text
     return is_valid
 
