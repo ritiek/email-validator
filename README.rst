@@ -50,5 +50,5 @@ License
 
 ``The MIT License``
 
-.. |Build Status| image:: https://travis-ci.org/ritiek/scribd-downloader.svg?branch=master
-   :target: https://travis-ci.org/ritiek/scribd-downloader
+.. |Build Status| image:: https://travis-ci.org/ritiek/email-validator.svg?branch=master
+   :target: https://travis-ci.org/ritiek/email-validator
