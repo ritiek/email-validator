@@ -21,7 +21,7 @@ setup(name='evalidator',
       url='https://www.github.com/ritiek/email-validator',
       keywords=['email', 'validator', 'exists', 'check', 'command-line', 'library', 'python'],
       license='MIT',
-      download_url='https://github.com/Ritiek/AskQuora/archive/v' + evalidator.__version__ + '.tar.gz',
+      download_url='https://github.com/ritiek/email-validator/archive/v' + evalidator.__version__ + '.tar.gz',
       classifiers=[],
       install_requires=[
             'requests',
