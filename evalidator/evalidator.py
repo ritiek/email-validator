@@ -4,6 +4,11 @@ import json
 import argparse
 
 
+class EmailError(Exception):
+    def __init__(self, message=None):
+        super(EmailError, self).__init__(message)
+
+
 def get_arguments():
     parser = argparse.ArgumentParser(
         description='Checks if an e-mail address exists or not ')
@@ -52,6 +57,8 @@ def validate(email):
     elif email.endswith('@yahoo.com'):
         is_valid = yahoo_mail(email)
     else:
+        if not cli:
+            raise EmailError('This e-mail service is not supported currently. Please submit an issue on https://github.com/ritiek/email-validator/issues and thank you!')
         is_valid = None
     return is_valid
 
@@ -73,5 +80,7 @@ def command_line():
 
 
 if __name__ == '__main__':
-
+    cli = True
     command_line()
+else:
+    cli = False
