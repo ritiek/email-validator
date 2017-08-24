@@ -4,7 +4,18 @@ import json
 import argparse
 
 
-email = 'someone@email.com'
+def get_arguments():
+    parser = argparse.ArgumentParser(
+        description='Checks if an e-mail address exists or not ')
+
+    parser.add_argument(
+        'email',
+        metavar='EMAIL',
+        type=str,
+        help='e-mail to check')
+
+    return parser.parse_args()
+
 
 def google_mail(email):
     data = {'Email': email}
@@ -14,22 +25,30 @@ def google_mail(email):
     return is_valid
 
 
-def valididate(email):
+def validate(email):
     if email.endswith('@gmail.com'):
         is_valid = google_mail(email)
     else:
-        raise()
+        is_valid = None
     return is_valid
 
 
 def command_line():
+    args = get_arguments()
+    email = args.email
+
     is_valid = validate(email)
 
-    if is_valid:
-        result = email + ' is an invalid e-mail address'
-    elif is_valid:
+    if is_valid is True:
         result = email + ' is a valid e-mail address'
+    elif is_valid is False:
+        result = email + ' is not a valid e-mail address'
     else:
         result = 'This e-mail service is not supported currently. Please submit an issue on https://github.com/ritiek/email-validator/issues and thank you!'
 
     print(result)
+
+
+if __name__ == '__main__':
+
+    command_line()
