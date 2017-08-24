@@ -1,5 +1,5 @@
 **This tool is unnecessary work! There is a `better
-tool <https://github.com/syrusakbary/validate_email>`__
+tool <https://github.com/syrusakbary/validate_email>`
 I did not know about earlier that uses SMTP
 replies to validate e-mails and works for any service.**
 
