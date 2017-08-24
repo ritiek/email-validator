@@ -25,6 +25,8 @@ Command-line Usage
 
     $ evalidate someone@email.com
 
+(where `@email.com` is one of below supported services)
+
 This will tell you if the given e-mail address exists on the internet or
 not.
 
@@ -36,11 +38,13 @@ Library Usage
     >>> import evalidator
     >>> evalidator.validate('someone@email.com')
 
+(where `@email.com` is one of below supported services)
+
 Supported Services
 ------------------
 
-- Google Mail
-- Yahoo! Mail
+- Google Mail (@gmail.com)
+- Yahoo! Mail (@yahoo.com)
 
 Please open a new issue if you would like to validate e-mail
 addresses for some other e-mail service.
