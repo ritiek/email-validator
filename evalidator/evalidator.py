@@ -57,9 +57,7 @@ def validate(email):
     elif email.endswith('@yahoo.com'):
         is_valid = yahoo_mail(email)
     else:
-        if not cli:
-            raise EmailError('This e-mail service is not supported currently. Please submit an issue on https://github.com/ritiek/email-validator/issues and thank you!')
-        is_valid = None
+        raise EmailError('This e-mail service is not supported currently. Please submit an issue on https://github.com/ritiek/email-validator/issues and thank you!')
     return is_valid
 
 
@@ -69,18 +67,18 @@ def command_line():
 
     is_valid = validate(email)
 
-    if is_valid is True:
+    if is_valid:
         result = email + ' is a valid e-mail address'
-    elif is_valid is False:
-        result = email + ' is not a valid e-mail address'
     else:
-        result = 'This e-mail service is not supported currently. Please submit an issue on https://github.com/ritiek/email-validator/issues and thank you!'
+        result = email + ' is not a valid e-mail address'
 
     print(result)
 
 
 if __name__ == '__main__':
-    cli = True
-    command_line()
-else:
-    cli = False
+
+    try:
+        command_line()
+
+    except EmailError:
+        print('This e-mail service is not supported currently. Please submit an issue on https://github.com/ritiek/email-validator/issues and thank you!')
